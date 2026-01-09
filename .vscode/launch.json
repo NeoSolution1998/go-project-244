@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug gendiff CLI",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/cmd/gendiff",
+            "args": [
+                "fixtures/file1.json",
+                "fixtures/file2.json"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "GO_ENV": "debug"
+            }
+        }
+    ]
+}
+

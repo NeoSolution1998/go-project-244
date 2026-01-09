@@ -29,11 +29,11 @@ func main() {
 			path1 := c.Args().Get(0)
 			path2 := c.Args().Get(1)
 
-			_, _, err := code.GenDiff(path1, path2)
+			diff, err := code.GenDiff(path1, path2)
 			if err != nil {
 				return err
 			}
-
+			fmt.Println(diff)
 			return nil
 		},
 	}
