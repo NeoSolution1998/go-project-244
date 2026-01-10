@@ -22,6 +22,19 @@ func TestGenDiffFlatJSON(t *testing.T) {
 
 	assert.Equal(t, string(expectedBytes), result)
 }
+func TestGenDiffYAML(t *testing.T) {
+	path1 := filepath.Join("..", "testdata", "fixtures", "file1.yml")
+	path2 := filepath.Join("..", "testdata", "fixtures", "file2.yml")
+	expectedPath := filepath.Join("..", "testdata", "fixture", "expected_stylish.txt")
+
+	expected, err := os.ReadFile(expectedPath)
+	require.NoError(t, err)
+
+	result, err := GenDiff(path1, path2)
+	require.NoError(t, err)
+
+	assert.Equal(t, string(expected), result)
+}
 
 func TestBuildDiffFlat(t *testing.T) {
 	data1 := map[string]any{
